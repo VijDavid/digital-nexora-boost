@@ -1,10 +1,10 @@
 export const site = {
   name: "Nexora Digital",
   tagline: "Web Design • Digital Marketing",
-  phone: "+40 745 000 000",
-  phoneHref: "tel:+40745000000",
-  email: "contact@nexoradigital.ro",
-  emailHref: "mailto:contact@nexoradigital.ro",
+  phone: "0770756134",
+  phoneHref: "tel:+40770756134",
+  email: "nexora.digital102@gmail.com",
+  emailHref: "mailto:nexora.digital102@gmail.com",
   hours: "Luni – Vineri, 09:00 – 18:00",
 };
 
