@@ -59,17 +59,38 @@ export function LeadForm() {
     setErrors((prev) => ({ ...prev, [key]: undefined }));
   };
 
-  const onSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    const next = validate(values);
-    setErrors(next);
-    if (Object.keys(next).length > 0) return;
-    setSending(true);
-    window.setTimeout(() => {
-      setSending(false);
-      setSent(true);
-    }, 500);
-  };
+  const onSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+
+  const next = validate(values);
+  setErrors(next);
+
+  if (Object.keys(next).length > 0) return;
+
+  setSending(true);
+
+  try {
+    const response = await fetch("https://formspree.io/f/xppajrwg", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify(values),
+    });
+
+    if (!response.ok) {
+      throw new Error("Form submission failed");
+    }
+
+    setSent(true);
+  } catch (error) {
+    console.error("Formspree error:", error);
+    alert("A apărut o eroare. Te rugăm să încerci din nou.");
+  } finally {
+    setSending(false);
+  }
+};
 
   if (sent) {
     return (
