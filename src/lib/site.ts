@@ -5,7 +5,7 @@ export const site = {
   phoneHref: "tel:+40770756134",
   email: "nexora.digital102@gmail.com",
   emailHref: "mailto:nexora.digital102@gmail.com",
-  hours: "Luni – Vineri, 09:00 – 18:00",
+  hours: "Luni–Duminică, 24/7",
 };
 
 export const navLinks = [
