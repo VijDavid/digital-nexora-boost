@@ -215,7 +215,7 @@ function Field({
 }: {
   label: string;
   htmlFor: string;
-  error?: string;
+  error?: string | undefined;
   required?: boolean;
   children: React.ReactNode;
 }) {
