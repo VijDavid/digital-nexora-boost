@@ -1,5 +1,5 @@
 export const site = {
-  name: "Nexora Digital",
+  name: "Nexora Web",
   tagline: "Web Design • Digital Marketing",
   phone: "0770756134",
   phoneHref: "tel:+40770756134",
