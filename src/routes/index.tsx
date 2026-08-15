@@ -1,24 +1,70 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Header } from "@/components/nexora/Header";
+import { Hero } from "@/components/nexora/Hero";
+import { Services } from "@/components/nexora/Services";
+import { Portfolio } from "@/components/nexora/Portfolio";
+import { Process } from "@/components/nexora/Process";
+import { Pricing } from "@/components/nexora/Pricing";
+import { ContactSection } from "@/components/nexora/ContactSection";
+import { FinalCta } from "@/components/nexora/FinalCta";
+import { Footer } from "@/components/nexora/Footer";
+import { site } from "@/lib/site";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
+const title = "Nexora Digital — Site-uri care aduc clienți | Web Design România";
+const description =
+  "Agenție digitală din România: site-uri de prezentare, landing pages, Google Ads și mentenanță. Design modern, optimizat pentru mobil și conversii. Cere o ofertă gratuită.";
+
 export const Route = createFileRoute("/")({
-  component: Index,
+  head: () => ({
+    meta: [
+      { title },
+      { name: "description", content: description },
+      { property: "og:title", content: title },
+      { property: "og:description", content: description },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: "/" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+    links: [{ rel: "canonical", href: "/" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "ProfessionalService",
+          name: site.name,
+          description,
+          telephone: site.phone,
+          email: site.email,
+          areaServed: "RO",
+          serviceType: [
+            "Web design",
+            "Landing pages",
+            "Google Ads",
+            "Marketing digital",
+            "Mentenanță site",
+          ],
+        }),
+      },
+    ],
+  }),
+  component: Home,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
-function Index() {
+function Home() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
+    <div className="relative min-h-screen overflow-x-hidden">
+      <Header />
+      <main>
+        <Hero />
+        <Services />
+        <Portfolio />
+        <Process />
+        <Pricing />
+        <ContactSection />
+        <FinalCta />
+      </main>
+      <Footer />
     </div>
   );
 }
