@@ -12,7 +12,7 @@ import { site } from "@/lib/site";
 
 const title = "Nexora Digital — Site-uri care aduc clienți | Web Design România";
 const description =
-  "Agenție digitală din România: site-uri de prezentare, landing pages, Google Ads și mentenanță. Design modern, optimizat pentru mobil și conversii. Cere o ofertă gratuită.";
+  "Simplu, rapid, sigur: site-uri de prezentare, landing pages, Google Ads și mentenanță. Design modern, optimizat pentru mobil și conversii. Cere o ofertă gratuită.";
 
 export const Route = createFileRoute("/")({
   head: () => ({

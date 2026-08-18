@@ -6,21 +6,25 @@ import { cn } from "@/lib/utils";
 const plans = [
   {
     name: "START",
+    oldPrice: "2000 RON",
     price: "699 RON",
+    savings: "75% reducere",
     note: "Ideal pentru afaceri la început de drum",
     features: [
-      "Site de prezentare, o pagină",
+      "Landing page sau site de prezentare",
       "Design modern, adaptat mobil",
       "Formular de contact",
       "Optimizare tehnică de bază",
-      "Livrare în 5–7 zile",
+      "Livrare în maxim 48 de ore",
     ],
-    cta: "Solicită o ofertă",
+    cta: "Solicită oferta START",
     highlight: false,
   },
   {
-    name: "BUSINESS",
+    name: "PROFESSIONAL",
+    oldPrice: "3000 RON",
     price: "999 RON",
+    savings: "65% reducere",
     note: "Cea mai aleasă variantă pentru afaceri locale",
     features: [
       "Site de prezentare, până la 5 pagini",
@@ -28,9 +32,9 @@ const plans = [
       "Texte optimizate pentru Google",
       "Integrare Google Maps și WhatsApp",
       "Configurare analytics",
-      "Livrare în 7–10 zile",
+      "Livrare în 2–5 zile",
     ],
-    cta: "Vreau pachetul Business",
+    cta: "Vreau pachetul Professional",
     highlight: true,
   },
   {
@@ -74,7 +78,15 @@ export function Pricing() {
             <h3 className="text-sm font-semibold tracking-[0.16em] text-muted-foreground">
               {p.name}
             </h3>
-            <p className="mt-4 font-display text-3xl font-bold">{p.price}</p>
+            {p.oldPrice ? (
+              <div className="mt-4 flex items-center gap-2">
+                <span className="text-lg text-muted-foreground line-through">{p.oldPrice}</span>
+                <span className="rounded-full bg-primary/10 px-2 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-primary">
+                  {p.savings}
+                </span>
+              </div>
+            ) : null}
+            <p className="mt-2 font-display text-3xl font-bold">{p.price}</p>
             <p className="mt-2 text-sm text-muted-foreground">{p.note}</p>
             <ul className="mt-7 flex-1 space-y-3">
               {p.features.map((f) => (

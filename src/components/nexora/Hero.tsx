@@ -18,7 +18,7 @@ export function Hero() {
       <div className="relative mx-auto max-w-6xl px-5 lg:px-8">
         <div className="reveal mx-auto max-w-3xl text-center">
           <span className="inline-flex items-center gap-2 rounded-full border border-border bg-surface/70 px-4 py-1.5 text-xs tracking-wide text-muted-foreground">
-            Agenție digitală din România
+            Simplu, rapid, sigur
           </span>
           <h1 className="mt-7 text-4xl font-bold leading-[1.05] sm:text-5xl lg:text-6xl">
             Site-uri care transformă <span className="text-gradient">vizitatorii în clienți</span>.
@@ -29,9 +29,15 @@ export function Hero() {
           </p>
 
           <div className="mt-9 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center">
+            <CtaLink href="#preturi" size="lg" className="sm:hidden">
+              Vezi oferte
+            </CtaLink>
             <CtaLink href="#contact" size="lg">
               Solicită o ofertă
               <ArrowRight className="size-4" aria-hidden="true" />
+            </CtaLink>
+            <CtaLink href="#preturi" variant="outline" size="lg" className="hidden sm:inline-flex">
+              Vezi oferte
             </CtaLink>
             <CtaLink href={site.phoneHref} variant="outline" size="lg">
               <Phone className="size-4" aria-hidden="true" />
