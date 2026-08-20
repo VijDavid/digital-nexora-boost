@@ -6,21 +6,25 @@ import { cn } from "@/lib/utils";
 const plans = [
   {
     name: "START",
-    price: "699 RON",
+    oldPrice: "2.000 RON",
+    price: "600 RON",
+    discount: "70% reducere",
     note: "Ideal pentru afaceri la început de drum",
     features: [
       "Site de prezentare, o pagină",
       "Design modern, adaptat mobil",
       "Formular de contact",
       "Optimizare tehnică de bază",
-      "Livrare în 5–7 zile",
+      "Livrare în maximum 48 de ore",
     ],
     cta: "Solicită o ofertă",
     highlight: false,
   },
   {
     name: "BUSINESS",
+    oldPrice: "3.000 RON",
     price: "999 RON",
+    discount: "67% reducere",
     note: "Cea mai aleasă variantă pentru afaceri locale",
     features: [
       "Site de prezentare, până la 5 pagini",
@@ -28,7 +32,7 @@ const plans = [
       "Texte optimizate pentru Google",
       "Integrare Google Maps și WhatsApp",
       "Configurare analytics",
-      "Livrare în 7–10 zile",
+      "Livrare în 3–5 zile",
     ],
     cta: "Vreau pachetul Business",
     highlight: true,
@@ -54,15 +58,15 @@ export function Pricing() {
     <Section
       id="preturi"
       eyebrow="Prețuri"
-      title="Pachete transparente, fără costuri ascunse"
-      description="Prețurile sunt de start și se stabilesc final după o scurtă discuție despre nevoile proiectului tău."
+      title="Site profesional pentru afacerea ta"
+      description="Alege punctul de pornire potrivit. Prețul final se confirmă după o scurtă discuție despre nevoile proiectului tău."
     >
-      <div className="grid gap-6 lg:grid-cols-3 lg:items-start">
+      <div className="grid gap-5 lg:grid-cols-3 lg:items-start lg:gap-6">
         {plans.map((p) => (
           <article
             key={p.name}
             className={cn(
-              "surface-card relative flex h-full flex-col p-7",
+              "surface-card relative flex h-full flex-col p-6 sm:p-7",
               p.highlight && "border-primary/50 glow-ring lg:-mt-4 lg:p-8",
             )}
           >
@@ -74,7 +78,11 @@ export function Pricing() {
             <h3 className="text-sm font-semibold tracking-[0.16em] text-muted-foreground">
               {p.name}
             </h3>
-            <p className="mt-4 font-display text-3xl font-bold">{p.price}</p>
+            <div className="mt-4 flex flex-wrap items-baseline gap-x-3 gap-y-1">
+              {p.oldPrice && <span className="text-sm text-muted-foreground line-through">{p.oldPrice}</span>}
+              <p className="font-display text-3xl font-bold">{p.price}</p>
+              {p.discount && <span className="text-xs font-semibold text-success">{p.discount}</span>}
+            </div>
             <p className="mt-2 text-sm text-muted-foreground">{p.note}</p>
             <ul className="mt-7 flex-1 space-y-3">
               {p.features.map((f) => (
