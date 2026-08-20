@@ -15,7 +15,7 @@ const plans = [
       "Design modern, adaptat mobil",
       "Formular de contact",
       "Optimizare tehnică de bază",
-      "Livrare în maximum 48 de ore",
+      "Livrare în 5–7 zile",
     ],
     cta: "Solicită o ofertă",
     highlight: false,
@@ -32,7 +32,7 @@ const plans = [
       "Texte optimizate pentru Google",
       "Integrare Google Maps și WhatsApp",
       "Configurare analytics",
-      "Livrare în 3–5 zile",
+      "Livrare în 7–10 zile",
     ],
     cta: "Vreau pachetul Business",
     highlight: true,
@@ -58,15 +58,15 @@ export function Pricing() {
     <Section
       id="preturi"
       eyebrow="Prețuri"
-      title="Site profesional pentru afacerea ta"
-      description="Alege punctul de pornire potrivit. Prețul final se confirmă după o scurtă discuție despre nevoile proiectului tău."
+      title="Pachete transparente, fără costuri ascunse"
+      description="Prețurile sunt de start și se stabilesc final după o scurtă discuție despre nevoile proiectului tău."
     >
-      <div className="grid gap-5 lg:grid-cols-3 lg:items-start lg:gap-6">
+      <div className="grid gap-6 lg:grid-cols-3 lg:items-start">
         {plans.map((p) => (
           <article
             key={p.name}
             className={cn(
-              "surface-card relative flex h-full flex-col p-6 sm:p-7",
+              "surface-card relative flex h-full flex-col p-7",
               p.highlight && "border-primary/50 glow-ring lg:-mt-4 lg:p-8",
             )}
           >

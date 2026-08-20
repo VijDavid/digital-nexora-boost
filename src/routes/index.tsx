@@ -1,7 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Header } from "@/components/nexora/Header";
 import { Hero } from "@/components/nexora/Hero";
-import { WhyNexora } from "@/components/nexora/WhyNexora";
 import { Services } from "@/components/nexora/Services";
 import { Portfolio } from "@/components/nexora/Portfolio";
 import { Process } from "@/components/nexora/Process";
@@ -58,7 +57,6 @@ function Home() {
       <Header />
       <main>
         <Hero />
-        <WhyNexora />
         <Services />
         <Portfolio />
         <Process />

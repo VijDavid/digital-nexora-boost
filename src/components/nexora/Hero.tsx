@@ -3,46 +3,47 @@ import { site } from "@/lib/site";
 import { CtaLink } from "./CtaButton";
 
 const trust = [
-  "Design profesional",
+  "Design modern",
   "Optimizat pentru mobil",
-  "Site rapid",
   "Orientat spre conversii",
+  "Livrare rapidă",
 ];
 
 export function Hero() {
   return (
-    <section id="top" className="relative overflow-hidden pb-12 pt-28 sm:pb-20 sm:pt-32 lg:pb-32 lg:pt-44">
-      <div className="ambient-blur -top-32 left-1/2 size-[420px] -translate-x-1/2 bg-primary" />
-      <div className="ambient-blur right-[-10%] top-40 hidden size-[320px] bg-violet sm:block" />
+    <section id="top" className="relative overflow-hidden pb-20 pt-32 lg:pb-32 lg:pt-44">
+      <div className="ambient-blur -top-32 left-1/2 size-[520px] -translate-x-1/2 bg-primary" />
+      <div className="ambient-blur right-[-10%] top-40 size-[380px] bg-violet" />
 
       <div className="relative mx-auto max-w-6xl px-5 lg:px-8">
         <div className="reveal mx-auto max-w-3xl text-center">
-          <span className="inline-flex items-center gap-2 rounded-full border border-border bg-surface/70 px-3.5 py-1.5 text-xs tracking-wide text-muted-foreground">
-            Agenție digitală din România
+          <span className="inline-flex items-center gap-2 rounded-full border border-border bg-surface/70 px-4 py-1.5 text-xs tracking-wide text-muted-foreground">
+            simplu, rapid
           </span>
-          <h1 className="mt-6 text-[2.35rem] font-bold leading-[1.08] sm:mt-7 sm:text-5xl lg:text-6xl">
+          <p className="mt-3 text-sm text-muted-foreground">Plătești doar la final</p>
+          <h1 className="mt-7 text-4xl font-bold leading-[1.05] sm:text-5xl lg:text-6xl">
             Site-uri care transformă <span className="text-gradient">vizitatorii în clienți</span>.
           </h1>
-          <p className="mx-auto mt-5 max-w-2xl text-[0.98rem] leading-relaxed text-muted-foreground sm:mt-6 sm:text-lg">
+          <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
             Creăm site-uri moderne, rapide și optimizate pentru conversii pentru afaceri care vor să
             crească online.
           </p>
 
-          <div className="mt-7 flex flex-col items-stretch justify-center gap-3 sm:mt-9 sm:flex-row sm:items-center">
-            <CtaLink href="#contact" size="lg" className="shadow-lg shadow-primary/15">
+          <div className="mt-9 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center">
+            <CtaLink href="#contact" size="lg">
               Solicită o ofertă
               <ArrowRight className="size-4" aria-hidden="true" />
             </CtaLink>
-            <CtaLink href={site.phoneHref} variant="outline" size="lg" className="border-primary/30 bg-surface/40">
+            <CtaLink href={site.phoneHref} variant="outline" size="lg">
               <Phone className="size-4" aria-hidden="true" />
               Sună acum
             </CtaLink>
           </div>
 
-          <ul className="mx-auto mt-8 grid max-w-2xl grid-cols-2 gap-x-4 gap-y-3 border-t border-border/70 pt-6 text-left sm:mt-10 sm:flex sm:justify-center sm:border-0 sm:pt-0">
+          <ul className="mx-auto mt-10 flex max-w-2xl flex-wrap justify-center gap-x-6 gap-y-3">
             {trust.map((t) => (
-              <li key={t} className="flex items-center gap-2 text-xs text-muted-foreground sm:text-sm">
-                <Check className="size-4 shrink-0 text-success" aria-hidden="true" />
+              <li key={t} className="flex items-center gap-2 text-sm text-muted-foreground">
+                <Check className="size-4 text-success" aria-hidden="true" />
                 {t}
               </li>
             ))}

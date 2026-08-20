@@ -31,7 +31,7 @@ const projectTypes = [
   "Altceva",
 ];
 
-const budgets = ["Până la 600 RON", "600 – 1.000 RON", "1.000 – 2.500 RON", "Peste 2.500 RON", "Nu știu încă"];
+const budgets = ["Sub 700 RON", "700 – 1.000 RON", "1.000 – 2.500 RON", "Peste 2.500 RON", "Nu știu încă"];
 
 function validate(v: Values) {
   const e: Partial<Record<keyof Values, string>> = {};
