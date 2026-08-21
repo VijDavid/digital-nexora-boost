@@ -18,8 +18,9 @@ export function Hero() {
       <div className="relative mx-auto max-w-6xl px-5 lg:px-8">
         <div className="reveal mx-auto max-w-3xl text-center">
           <span className="inline-flex items-center gap-2 rounded-full border border-border bg-surface/70 px-4 py-1.5 text-xs tracking-wide text-muted-foreground">
-            Simplu, rapid, sigur
+            simplu, rapid
           </span>
+          <p className="mt-3 text-sm text-muted-foreground">Plătești doar la final</p>
           <h1 className="mt-7 text-4xl font-bold leading-[1.05] sm:text-5xl lg:text-6xl">
             Site-uri care transformă <span className="text-gradient">vizitatorii în clienți</span>.
           </h1>

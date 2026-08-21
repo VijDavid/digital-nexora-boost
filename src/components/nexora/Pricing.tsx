@@ -6,9 +6,9 @@ import { cn } from "@/lib/utils";
 const plans = [
   {
     name: "START",
-    oldPrice: "2000 RON",
-    price: "699 RON",
-    savings: "75% reducere",
+    oldPrice: "2.000 RON",
+    price: "600 RON",
+    discount: "70% reducere",
     note: "Ideal pentru afaceri la început de drum",
     features: [
       "Landing page sau site de prezentare",
@@ -21,10 +21,10 @@ const plans = [
     highlight: false,
   },
   {
-    name: "PROFESSIONAL",
-    oldPrice: "3000 RON",
+    name: "BUSINESS",
+    oldPrice: "3.000 RON",
     price: "999 RON",
-    savings: "65% reducere",
+    discount: "67% reducere",
     note: "Cea mai aleasă variantă pentru afaceri locale",
     features: [
       "Site de prezentare, până la 5 pagini",
@@ -78,15 +78,11 @@ export function Pricing() {
             <h3 className="text-sm font-semibold tracking-[0.16em] text-muted-foreground">
               {p.name}
             </h3>
-            {p.oldPrice ? (
-              <div className="mt-4 flex items-center gap-2">
-                <span className="text-lg text-muted-foreground line-through">{p.oldPrice}</span>
-                <span className="rounded-full bg-primary/10 px-2 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-primary">
-                  {p.savings}
-                </span>
-              </div>
-            ) : null}
-            <p className="mt-2 font-display text-3xl font-bold">{p.price}</p>
+            <div className="mt-4 flex flex-wrap items-baseline gap-x-3 gap-y-1">
+              {p.oldPrice && <span className="text-sm text-muted-foreground line-through">{p.oldPrice}</span>}
+              <p className="font-display text-3xl font-bold">{p.price}</p>
+              {p.discount && <span className="text-xs font-semibold text-success">{p.discount}</span>}
+            </div>
             <p className="mt-2 text-sm text-muted-foreground">{p.note}</p>
             <ul className="mt-7 flex-1 space-y-3">
               {p.features.map((f) => (
