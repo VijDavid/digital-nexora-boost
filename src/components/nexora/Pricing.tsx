@@ -15,7 +15,7 @@ const plans = [
       "Design modern, adaptat mobil",
       "Formular de contact",
       "Optimizare tehnică de bază",
-      "Livrare în maxim 48 de ore",
+      "Livrare în maxim 24 de ore",
     ],
     cta: "Solicită oferta START",
     highlight: false,
